@@ -5,5 +5,5 @@ script:
   - bundle exec bin/rake db:migrate
   - bundle exec rspec spec
 
-require "codeclimate-test-reporter"
-CodeClimate:TestReporter.start
+# require "codeclimate-test-reporter"
+# CodeClimate:TestReporter.start
