@@ -45,6 +45,7 @@ $ rspec
 * Add comments
 * Add a page for each photo (displaying comments and likes)
 * Add a profile page
+* Add styling 
 
 ## v3.0
 
