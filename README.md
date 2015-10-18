@@ -35,7 +35,7 @@ $ rspec
 
 * Users can sign up, sign in, sign out
 * Users can add pictures
-* All pictures are displayed int he index
+* All pictures are displayed in the index
 * Users can delete their own pictures
 * Users have a username in addition to their email and password
 
