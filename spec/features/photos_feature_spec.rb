@@ -24,7 +24,7 @@ feature 'photos' do
       click_button "Create Photo"
       expect(page).to have_content 'lazy cat'
       expect(page).not_to have_content 'no photos on your feed'
-      expect(page).to have_selector("img")
+      expect(page).to have_css("img[src*='cat']")
     end
 
     scenario 'cannot add a photo without an image' do
@@ -69,6 +69,24 @@ feature 'photos' do
       expect(page).not_to have_content 'no photos on your feed'
       expect(page).to have_selector("img")
     end
+  end
+
+  context 'single photo page' do
+    before do
+      user = build(:user)
+      sign_up(user)
+      click_link 'Add a photo'
+      fill_in 'Caption', with: 'lazy cat'
+      attach_file "photo[image]", 'spec/assets_spec/images/cat.png'
+      click_button "Create Photo"
+    end
+
+    scenario 'shows each photo with its caption' do
+      click_link 'View photo'
+      expect(page).to have_content 'lazy cat'
+      expect(page).to have_css("img[src*='cat']")
+    end
+
   end
 
 end
