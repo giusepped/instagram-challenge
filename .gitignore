@@ -14,3 +14,6 @@
 
 #Ignore the file in steps for now
 /steps/*
+
+#Ignore all the images
+/public/system/photos/*
